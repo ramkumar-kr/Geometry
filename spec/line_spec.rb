@@ -1,14 +1,38 @@
 require 'spec_helper'
 
-describe 'Calulate length test 1' do	
+describe Line do	
 
-	 it "length of the line with end points values (2,3) and (5,7) is 5" do
-	 		@line = Line.new(2,3,5,7)
-	 		expect(@line.length).to eq(5)
-	 end
+	it "length of the line with end points values (2,3) and (5,7) is 5" do
+		point_1 = Point.new(2,3)
+		point_2 = Point.new(5,7)
+		@line = Line.new(point_1,point_2)
+		expect(@line.length).to eq(5)
+	end
 
-	 it "length of the line with end points values (1,1) and (1,1) is 0" do
-	 		@line = Line.new(1,1,1,1)
-	 		expect(@line.length).to eq(0)
-	 end
+	it "length of the line with end points values (1,1) and (1,1) is 0" do
+		point_1 = Point.new(1,1)
+		point_2 = Point.new(1,1)
+		@line = Line.new(point_1,point_2)
+		expect(@line.length).to eq(0)
+	end
+
+	it "having end points with values (1,2) and (2,3) should be equal to another line having (1,2) and (2,3) as end points" do
+		line_1_end_point_1 = Point.new(1,2)
+		line_1_end_point_2 = Point.new(2,3)
+		line_2_end_point_1 = Point.new(1,2)
+		line_2_end_point_2 = Point.new(2,3)
+		line_1 = Line.new(line_1_end_point_1, line_1_end_point_2)
+		line_2 = Line.new(line_2_end_point_1, line_2_end_point_2)
+		expect(line_1 == line_2).to eq(true)
+ 	end
+
+ 	it "having end points with values (1,2) and (4,3) should not be equal to another line having (1,2) and (2,3) as end points" do
+		line_1_end_point_1 = Point.new(1,2)
+		line_1_end_point_2 = Point.new(4,3)
+		line_2_end_point_1 = Point.new(1,2)
+		line_2_end_point_2 = Point.new(2,3)
+		line_1 = Line.new(line_1_end_point_1, line_1_end_point_2)
+		line_2 = Line.new(line_2_end_point_1, line_2_end_point_2)
+		expect(line_1 == line_2).to eq(false)
+ 	end
 end
