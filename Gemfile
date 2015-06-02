@@ -1,3 +1,4 @@
 source 'https://rubygems.org'
 
-require "rspec"
+gem "rake"
+gem "rspec"

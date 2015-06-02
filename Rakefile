@@ -6,4 +6,5 @@ begin
   task :default => :spec
 rescue LoadError
   # no rspec available
+  p 'unable to load'
 end
