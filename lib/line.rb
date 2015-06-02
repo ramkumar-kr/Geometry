@@ -14,6 +14,6 @@ class Line
 	end
 
 	def ==(compare)
-		@end_point1 == compare.end_point1 && @end_point2 == compare.end_point2
+		(@end_point1 == compare.end_point1 && @end_point2 == compare.end_point2) if compare
 	end
 end

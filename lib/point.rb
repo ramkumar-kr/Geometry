@@ -8,7 +8,7 @@ class Point
 	end
 
 	def ==(compare)
-		x == compare.x && y == compare.y
-	end
+		x == compare.x && y == compare.y if compare
+	end	
 
 end
