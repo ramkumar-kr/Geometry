@@ -7,13 +7,12 @@ class Line
 	end
 
 	def length
-		x_comp = @end_point2.x - @end_point1.x
-		y_comp = @end_point2.y - @end_point1.y
-		s = x_comp * x_comp + y_comp * y_comp
-		return Math.sqrt(s)
+		@end_point1.distance(@end_point2)
+		
 	end
 
 	def ==(compare)
-		(@end_point1 == compare.end_point1 && @end_point2 == compare.end_point2) if compare
+		(@end_point1 == compare.end_point1 && @end_point2 == compare.end_point2) || 
+		(@end_point1 == compare.end_point2 && @end_point2 == compare.end_point1) if compare && compare.class == self.class
 	end
 end

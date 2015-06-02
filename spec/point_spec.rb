@@ -30,4 +30,17 @@ describe Point do
 		expect(point1).to_not eq(nil)
 	end
 
+	it "comparision of hash of two objects with same data yield the same hash" do
+		point1 = Point.new(4,3)
+		point2 = Point.new(4,3)
+
+		expect(point1.hash).to eq(point2.hash)
+	end
+
+	it "hash" do
+		point1 = Point.new(4,3)
+		point2 = Point.new(3,4)
+
+		expect(point1.hash).to_not eq(point2.hash)
+	end
 end
