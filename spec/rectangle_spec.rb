@@ -36,11 +36,11 @@ describe Rectangle do
 		expect(rectangle.area).to eq(8)
 	end
 
-	it "given two points with coordinates(5,3) and (3,7) it should return the area as 8 square units" do
+	it "given two points with coordinates(5,3) and (3,7) it should return the area as 12 square units" do
 		point1 = Point.new(5,3)
 		point2 = Point.new(3,7)
 		rectangle=Rectangle.new(point1,point2)
-		expect(rectangle.perimeter).to eq(8)
+		expect(rectangle.perimeter).to eq(12)
 	end
 
 	it "given two points with coordinates(-5,5) and (3,-3) it should return the area as 64 square units" do
