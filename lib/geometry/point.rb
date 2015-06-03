@@ -25,4 +25,11 @@ class Geometry::Point
 		arr.hash
 	end	
 
+	def eql?(compare)
+		self == compare
+	end
+
+	def with_displacement(delta_x, delta_y)
+		Geometry::Point.new(x + delta_x, y + delta_y)
+	end
 end

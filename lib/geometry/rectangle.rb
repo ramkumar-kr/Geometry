@@ -6,6 +6,11 @@ class Geometry::Rectangle
 		@breadth = (diagonal_point1.y - diagonal_point2.y).abs
 	end
 
+	def self.initialize_square(point1, side)
+		point2 = point1.with_displacement(side, -side)
+		new(point1 , point2)
+	end
+
 	def perimeter
 		2*(@length + @breadth)
 	end
