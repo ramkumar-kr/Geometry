@@ -1,5 +1,5 @@
 # Defines attributes of a Rectangle 
-class Rectangle
+class Geometry::Rectangle
 	
 	def initialize(diagonal_point1,diagonal_point2)
 		@length = (diagonal_point1.x - diagonal_point2.x).abs

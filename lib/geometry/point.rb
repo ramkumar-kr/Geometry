@@ -1,5 +1,5 @@
 # Represents properties and operations related to a geometric point
-class Point
+class Geometry::Point
 	attr_reader :x, :y
 
 	def initialize(x,y)
